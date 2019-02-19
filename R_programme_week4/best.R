@@ -21,29 +21,25 @@ best <- function(state, outcome) {
     print("Error in best")
     return 
   }
-  print("easy")
   ##get the outcome1
   if(outcome=="heart attack"){
     #return the state_Vector[,2] with the min number of coulumn 11;
     min_Vector<-as.vector(state_Vector[,11])
-    print("easy2")
-    index<-as.vector((which(min_Vector==min(min_Vector),arr.ind=TRUE)))
-    print("easy3")
-    print(index)
+    index<-as.vector(which.min(min_Vector))
     result<-state_Vector[index,2]
     return (as.ordered(result)[1])
   }
   if(outcome=="heart failure"){
     #return the state_Vector[,2] with the min number of coulumn 17;
     min_Vector<-as.vector(state_Vector[,17])
-    index<-as.vector((which(min_Vector==min(min_Vector),arr.ind=TRUE)))
+    index<-as.vector(which.min(min_Vector))
     result<-state_Vector[index,2]
     return (as.ordered(result)[1])
   }
   if(outcome=="pneumonia"){
     #return the state_Vector[,2] with the min number of coulumn 23;
     min_Vector<-as.vector(state_Vector[,23])
-    index<-as.vector((which(min_Vector==min(min_Vector),arr.ind=TRUE)))
+    index<-as.vector(which.min(min_Vector))
     result<-state_Vector[index,2]
     return (as.ordered(result)[1])
   }
