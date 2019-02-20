@@ -35,7 +35,7 @@ rankhospital <- function(state, outcome, num = "best") { ## Read outcome data
     }
     if(class(num)==class(1)){
       #use order function and get the row index
-      index<-order(as.numeric(min_Vector),decreasing = FALSE)[num]
+      index<-order(as.numeric(min_Vector),as.character(state_Vector[,2]),decreasing = FALSE)[num]
       result<-state_Vector[index,2]
       return (as.ordered(result)[1])
     }
@@ -56,7 +56,7 @@ rankhospital <- function(state, outcome, num = "best") { ## Read outcome data
     }
     if(class(num)==class(1)){
       #use order function and get the row index
-      index<-order(as.numeric(min_Vector),decreasing = FALSE)[num]
+      index<-order(as.numeric(min_Vector),as.character(state_Vector[,2]),decreasing = FALSE)[num]
       result<-state_Vector[index,2]
       return (as.ordered(result)[1])
     }
@@ -76,7 +76,7 @@ rankhospital <- function(state, outcome, num = "best") { ## Read outcome data
     }
     if(class(num)==class(1)){
       #use order function and get the row index
-      index<-order(as.numeric(min_Vector),decreasing = FALSE)[num]
+      index<-order(as.numeric(min_Vector),as.character(state_Vector[,2]),decreasing = FALSE)[num]
       result<-state_Vector[index,2]
       return (as.ordered(result)[1])
     }
