@@ -13,6 +13,7 @@ run_analysis<-function(){
   test_subject<-read.table("test/subject_test.txt")
   test_x<-read.table("test/X_test.txt")
   test_y<-read.table("test/Y_test.txt")
+
   
   test_x_mean_std<-test_x[,mean_std_index]
   
@@ -61,6 +62,7 @@ run_analysis<-function(){
   }
   #delete the first row of matrix_test
   matrix_test<-matrix_test[-1,]
+  activity_column<-c("WALKING","WALKING_UPSTAIRS","WALKING_DOWNSTAIRS","SITTING","STANDING","LAYING")
   subject_column<-rep("test",6)
   DataFrame_average_test<-data.frame(subject_column,activity_column,matrix_test)
   colnames(DataFrame_average_test)<-Data_part2_columns_names
@@ -78,6 +80,7 @@ run_analysis<-function(){
   }
   #delete the first row of matrix_train
   matrix_train<-matrix_train[-1,]
+  activity_column<-c("WALKING","WALKING_UPSTAIRS","WALKING_DOWNSTAIRS","SITTING","STANDING","LAYING")
   subject_column<-rep("train",6)
   DataFrame_average_train<-data.frame(subject_column,activity_column,matrix_train)
   colnames(DataFrame_average_train)<-Data_part2_columns_names
